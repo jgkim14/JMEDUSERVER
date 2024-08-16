@@ -19,7 +19,7 @@ if not os.path.exists(log_dir):
 # Logger 설정
 logger = logging.getLogger("fastapi_error_handlers")
 logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler(log_file)
+file_handler = logging.FileHandler(log_file, mode='a')  # 'a' 모드로 설정하여 기존 기록 유지
 file_handler.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 file_handler.setFormatter(formatter)
